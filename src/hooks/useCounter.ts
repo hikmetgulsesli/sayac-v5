@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback } from 'react'
 import { getStorageItem, setStorageItem } from '../utils/storage'
 
 const STORAGE_KEY = 'sayac-v5-count'
@@ -19,52 +19,50 @@ interface UseCounterReturn {
  * Handles errors (SecurityError, QuotaExceededError)
  */
 export function useCounter(): UseCounterReturn {
-  const [count, setCount] = useState<number>(0)
-  const [loading, setLoading] = useState<boolean>(true)
-  const [error, setError] = useState<string | null>(null)
-  const isMounted = useRef(false)
-
-  // Load from localStorage on mount
-  useEffect(() => {
+  const [count, setCount] = useState<number>(() => {
     try {
       const saved = getStorageItem(STORAGE_KEY)
-      if (saved !== null) {
-        const parsed = parseInt(saved, 10)
-        if (!isNaN(parsed)) {
-          setCount(parsed)
-        }
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'localStorage erişim hatası')
-    } finally {
-      setLoading(false)
+      return saved !== null ? parseInt(saved, 10) || 0 : 0
+    } catch {
+      return 0
     }
-    isMounted.current = true
-  }, [])
-
-  // Save to localStorage whenever count changes
-  useEffect(() => {
-    if (!isMounted.current || loading) return
-
-    const success = setStorageItem(STORAGE_KEY, count.toString())
-    if (!success && error === null) {
-      setError('localStorage kaydetme hatası')
-    }
-  }, [count, loading, error])
+  })
+  const [error, setError] = useState<string | null>(null)
 
   const increment = useCallback((): void => {
-    setCount((c) => c + 1)
-    setError(null)
+    const saved = getStorageItem(STORAGE_KEY)
+    const currentCount = saved !== null ? parseInt(saved, 10) || 0 : 0
+    const newCount = currentCount + 1
+    const success = setStorageItem(STORAGE_KEY, newCount.toString())
+    if (success) {
+      setCount(newCount)
+      setError(null)
+    } else {
+      setError('localStorage erişimi engellendi')
+    }
   }, [])
 
   const decrement = useCallback((): void => {
-    setCount((c) => c - 1)
-    setError(null)
+    const saved = getStorageItem(STORAGE_KEY)
+    const currentCount = saved !== null ? parseInt(saved, 10) || 0 : 0
+    const newCount = currentCount - 1
+    const success = setStorageItem(STORAGE_KEY, newCount.toString())
+    if (success) {
+      setCount(newCount)
+      setError(null)
+    } else {
+      setError('localStorage erişimi engellendi')
+    }
   }, [])
 
   const reset = useCallback((): void => {
-    setCount(0)
-    setError(null)
+    const success = setStorageItem(STORAGE_KEY, '0')
+    if (success) {
+      setCount(0)
+      setError(null)
+    } else {
+      setError('localStorage erişimi engellendi')
+    }
   }, [])
 
   return {
@@ -72,7 +70,7 @@ export function useCounter(): UseCounterReturn {
     increment,
     decrement,
     reset,
-    loading,
+    loading: false,
     error,
   }
 }

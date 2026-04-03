@@ -1,33 +1,23 @@
-import { useState, useEffect } from 'react'
-import './index.css'
+import { useCounter } from './hooks/useCounter';
+import { CounterDisplay } from './components/CounterDisplay';
+import { CounterButtons } from './components/CounterButtons';
+import { ErrorBanner } from './components/ErrorBanner';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState<number>(() => {
-    const saved = localStorage.getItem('sayac-deger')
-    return saved !== null ? parseInt(saved, 10) : 0
-  })
-
-  useEffect(() => {
-    localStorage.setItem('sayac-deger', count.toString())
-  }, [count])
-
-  const artir = () => setCount((c) => c + 1)
-  const azalt = () => setCount((c) => c - 1)
-  const sifirla = () => setCount(0)
+  const { count, increment, decrement, reset, error } = useCounter();
 
   return (
-    <div className="container">
-      <div className="metric-card">
-        <span className="trend-indicator">SAYAÇ</span>
-        <div className="display-lg">{count}</div>
-      </div>
-      <div className="button-group">
-        <button className="btn btn-secondary" onClick={azalt}>Azalt</button>
-        <button className="btn btn-primary" onClick={sifirla}>Sıfırla</button>
-        <button className="btn btn-secondary" onClick={artir}>Artır</button>
-      </div>
+    <div className="min-h-screen bg-slate-950 text-white font-sans flex flex-col items-center justify-center p-4">
+      <ErrorBanner error={error} onDismiss={() => {}} />
+      <CounterDisplay count={count} />
+      <CounterButtons
+        onIncrement={increment}
+        onDecrement={decrement}
+        onReset={reset}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

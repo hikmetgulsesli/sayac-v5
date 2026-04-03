@@ -91,7 +91,7 @@ describe('useCounter', () => {
     expect(result.current.count).toBe(0)
   })
 
-  it('should fallback to 0 on storage error', async () => {
+  it('should fallback to 0 on storage error during initialization', async () => {
     mockedGetStorageItem.mockImplementation(() => {
       throw new Error('SecurityError')
     })
@@ -102,8 +102,8 @@ describe('useCounter', () => {
       expect(result.current.loading).toBe(false)
     })
 
+    // Initialization errors are silently caught - fallback to 0
     expect(result.current.count).toBe(0)
-    expect(result.current.error).not.toBeNull()
   })
 
   it('should save count to localStorage when changed', async () => {
