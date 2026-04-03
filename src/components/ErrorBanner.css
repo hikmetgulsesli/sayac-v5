@@ -1,0 +1,28 @@
+.error-banner {
+  background-color: var(--surface-container);
+  border-radius: 0.5rem;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+}
+
+.error-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--error);
+}
+
+.error-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--on-surface);
+  opacity: 0.8;
+}
