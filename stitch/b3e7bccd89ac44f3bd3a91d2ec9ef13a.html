@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#151b2d",
+                        "outline": "#869585",
+                        "on-surface-variant": "#bccbb9",
+                        "on-primary-fixed": "#002109",
+                        "on-tertiary": "#68000a",
+                        "secondary-container": "#404754",
+                        "on-primary-container": "#004b1e",
+                        "tertiary-fixed-dim": "#ffb3ad",
+                        "tertiary": "#ffb4ae",
+                        "tertiary-container": "#ff8a83",
+                        "primary-fixed": "#6bff8f",
+                        "on-surface": "#dce1fb",
+                        "on-error": "#690005",
+                        "surface": "#0c1324",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#410004",
+                        "surface-bright": "#33394c",
+                        "surface-container": "#191f31",
+                        "inverse-primary": "#006e2f",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "on-primary": "#003915",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdad7",
+                        "on-primary-fixed-variant": "#005321",
+                        "on-background": "#dce1fb",
+                        "surface-container-highest": "#2e3447",
+                        "outline-variant": "#3d4a3d",
+                        "surface-container-lowest": "#070d1f",
+                        "surface-dim": "#0c1324",
+                        "secondary-fixed": "#dce2f3",
+                        "on-secondary-container": "#aeb5c5",
+                        "surface-container-high": "#23293c",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-secondary": "#2a313d",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#2a3043",
+                        "on-tertiary-container": "#860011",
+                        "inverse-surface": "#dce1fb",
+                        "surface-variant": "#2e3447",
+                        "primary": "#4be277",
+                        "primary-container": "#22c55e",
+                        "secondary": "#c0c7d6",
+                        "background": "#0c1324",
+                        "on-secondary-fixed": "#151c27",
+                        "surface-tint": "#4ae176",
+                        "primary-fixed-dim": "#4ae176"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #070d1f; /* surface-container-lowest as per DS */
+            color: #dce1fb;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-[#0c1324] dark:bg-[#0c1324] docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="text-2xl font-bold tracking-tighter text-[#4be277] uppercase font-['Space_Grotesk']">
+                SAYAÇ
+            </div>
+<div class="flex items-center gap-4">
+<button class="text-[#f5f7fa] opacity-60 hover:bg-[#23293c] transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/15">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional man with a neutral expression in a dark minimalist studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZeKK2MR0uEDWqKsKnSzuMT5hUXsCi6ktxnZ-etx_A2dH34_RFd2i90nwcOkwj-RU3XLh7I2zBehzOlJ4hf-cn-Crow1eUb3iGgENrjJoP7mwOZShw9MeEK7U2CtO0WLWpYqYc7JBVIARKHBnVfyL_T0zLjgLjbNCJ39IBZKtg7tjIjDuSLc_HQNbDY05XPMkNBcPhTvQKkaCyU_ZmbtMBS2nIZ4vYJZdBsfvWbQkAqsXHrk5f72oFpJ1bUM9kylt-SN0Ud-o_n7Q"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex min-h-screen pt-16">
+<!-- Side Navigation Bar (Hidden on Mobile) -->
+<aside class="fixed left-0 top-0 h-screen flex flex-col p-6 z-40 bg-[#070d1f] dark:bg-[#070d1f] w-64 hidden md:flex">
+<div class="mt-20 flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#f5f7fa] opacity-50 hover:bg-[#191f31] hover:opacity-100 transition-all font-['Inter'] font-medium uppercase tracking-[0.05em] active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Ana Sayfa</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#f5f7fa] opacity-50 hover:bg-[#191f31] hover:opacity-100 transition-all font-['Inter'] font-medium uppercase tracking-[0.05em] active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Geçmiş</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#f5f7fa] opacity-50 hover:bg-[#191f31] hover:opacity-100 transition-all font-['Inter'] font-medium uppercase tracking-[0.05em] active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="track_changes">track_changes</span>
+<span>Hedefler</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#4be277] border-r-4 border-[#4be277] bg-[#191f31]/50 font-['Inter'] font-medium uppercase tracking-[0.05em] active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Ayarlar</span>
+</a>
+</div>
+<div class="mt-auto">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#f5f7fa] opacity-50 hover:bg-[#191f31] hover:opacity-100 transition-all font-['Inter'] font-medium uppercase tracking-[0.05em] active:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Yardım</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-6 md:p-12 lg:p-24 max-w-5xl mx-auto w-full">
+<!-- Editorial Header -->
+<div class="mb-16">
+<h1 class="text-6xl md:text-8xl font-['Space_Grotesk'] font-bold tracking-tighter text-on-surface mb-4">
+                    Ayarlar
+                </h1>
+<p class="text-on-surface-variant font-['Inter'] text-lg opacity-70 tracking-wide">
+                    Uygulama deneyiminizi kişiselleştirin ve verilerinizi yönetin.
+                </p>
+</div>
+<!-- Settings Grid / Sections -->
+<div class="flex flex-col gap-12">
+<!-- Section: Uygulama Ayarları -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h2 class="text-sm font-['Inter'] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Uygulama Ayarları</h2>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-2xl">
+<!-- Theme Toggle -->
+<div class="flex items-center justify-between p-6 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface font-semibold">Tema</span>
+<span class="text-xs text-on-surface-variant opacity-60">Arayüz görünümünü değiştirin</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest p-1 rounded-lg border border-outline-variant/15">
+<button class="px-4 py-1.5 rounded text-xs font-bold uppercase tracking-widest bg-surface-container-high text-primary">Koyu</button>
+<button class="px-4 py-1.5 rounded text-xs font-bold uppercase tracking-widest text-on-surface-variant opacity-50 hover:opacity-100">Açık</button>
+</div>
+</div>
+<div class="h-px bg-outline-variant/10 mx-6"></div>
+<!-- Language Select -->
+<div class="flex items-center justify-between p-6 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface font-semibold">Dil</span>
+<span class="text-xs text-on-surface-variant opacity-60">Uygulama dilini belirleyin</span>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-on-surface px-6 py-2 pr-10 rounded-lg border border-outline-variant/15 focus:border-primary/20 focus:ring-0 text-sm font-medium">
+<option>Türkçe</option>
+<option>English</option>
+<option>Deutsch</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-sm" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Veri Yönetimi -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+<h2 class="text-sm font-['Inter'] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Veri Yönetimi</h2>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden shadow-2xl">
+<!-- LocalStorage Status -->
+<div class="flex items-center justify-between p-6 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface font-semibold">LocalStorage Durumu</span>
+<span class="text-xs text-on-surface-variant opacity-60">Cihaz içi veri depolama etkinliği</span>
+</div>
+<div class="flex items-center gap-2 text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-tighter">Aktif</span>
+</div>
+</div>
+<div class="h-px bg-outline-variant/10 mx-6"></div>
+<!-- Clear Data -->
+<div class="flex items-center justify-between p-6 hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col gap-1">
+<span class="text-on-surface font-semibold text-error">Tehlikeli İşlem</span>
+<span class="text-xs text-on-surface-variant opacity-60">Tüm sayaç verilerini ve geçmişi kalıcı olarak siler</span>
+</div>
+<button class="bg-error-container hover:bg-on-tertiary-container text-on-error-container px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-widest transition-all active:scale-95">
+                                Tüm Verileri Temizle
+                            </button>
+</div>
+</div>
+</section>
+<!-- Section: Klavye Kısayolları -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="keyboard">keyboard</span>
+<h2 class="text-sm font-['Inter'] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Klavye Kısayolları</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Shortcut 1 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center justify-center gap-4 text-center border border-outline-variant/5">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-lg shadow-inner">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_upward">arrow_upward</span>
+</div>
+<div>
+<div class="text-on-surface font-bold text-xl font-['Space_Grotesk']">+1 Artır</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest opacity-50 mt-1">Yukarı Ok Tuşu</div>
+</div>
+</div>
+<!-- Shortcut 2 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center justify-center gap-4 text-center border border-outline-variant/5">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-lg shadow-inner">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_downward">arrow_downward</span>
+</div>
+<div>
+<div class="text-on-surface font-bold text-xl font-['Space_Grotesk']">-1 Azalt</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest opacity-50 mt-1">Aşağı Ok Tuşu</div>
+</div>
+</div>
+<!-- Shortcut 3 -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center justify-center gap-4 text-center border border-outline-variant/5">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-lg shadow-inner text-xl font-bold text-on-surface">
+                                R
+                            </div>
+<div>
+<div class="text-on-surface font-bold text-xl font-['Space_Grotesk']">Sıfırla</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest opacity-50 mt-1">"R" Harf Tuşu</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Footer Decor -->
+<footer class="mt-24 mb-12 flex flex-col items-center">
+<div class="w-full h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent mb-12"></div>
+<div class="text-center">
+<div class="text-on-surface font-['Space_Grotesk'] font-bold tracking-widest text-sm opacity-20 mb-4">SAYAÇ v2.4.0-STABLE</div>
+<div class="flex gap-8 justify-center opacity-40 hover:opacity-100 transition-opacity">
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary" href="#">Gizlilik Politikası</a>
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary" href="#">Kullanım Şartları</a>
+<a class="text-xs font-bold uppercase tracking-widest hover:text-primary" href="#">Geliştirici API</a>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation (Bottom Bar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#191f31] backdrop-blur-xl bg-opacity-80 flex justify-around items-center py-4 px-6 z-50">
+<a class="flex flex-col items-center gap-1 text-[#f5f7fa] opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#f5f7fa] opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#f5f7fa] opacity-60" href="#">
+<span class="material-symbols-outlined" data-icon="track_changes">track_changes</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#4be277]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAYAÇ | ERİŞİM ENGELLENDİ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#070d1f",
+                    "surface-container": "#191f31",
+                    "surface-container-highest": "#2e3447",
+                    "outline": "#869585",
+                    "on-background": "#dce1fb",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "secondary": "#c0c7d6",
+                    "on-secondary-container": "#aeb5c5",
+                    "inverse-surface": "#dce1fb",
+                    "on-tertiary": "#68000a",
+                    "tertiary-fixed": "#ffdad7",
+                    "surface-variant": "#2e3447",
+                    "inverse-on-surface": "#2a3043",
+                    "on-secondary-fixed": "#151c27",
+                    "surface-bright": "#33394c",
+                    "on-secondary-fixed-variant": "#404754",
+                    "error-container": "#93000a",
+                    "on-secondary": "#2a313d",
+                    "primary-fixed-dim": "#4ae176",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "on-primary-container": "#004b1e",
+                    "on-primary-fixed-variant": "#005321",
+                    "surface-container-high": "#23293c",
+                    "primary-fixed": "#6bff8f",
+                    "on-tertiary-container": "#860011",
+                    "on-surface": "#dce1fb",
+                    "primary": "#4be277",
+                    "surface-dim": "#0c1324",
+                    "inverse-primary": "#006e2f",
+                    "surface-tint": "#4ae176",
+                    "on-primary-fixed": "#002109",
+                    "on-surface-variant": "#bccbb9",
+                    "surface-container-low": "#151b2d",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#3d4a3d",
+                    "on-tertiary-fixed": "#410004",
+                    "on-primary": "#003915",
+                    "primary-container": "#22c55e",
+                    "on-error": "#690005",
+                    "background": "#0c1324",
+                    "secondary-container": "#404754",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed": "#dce2f3",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "surface": "#0c1324",
+                    "tertiary": "#ffb4ae",
+                    "tertiary-container": "#ff8a83"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .monolith-glitch {
+            text-shadow: 2px 0 #ffb4ae, -2px 0 #4be277;
+        }
+        .kinetic-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(75, 226, 119, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col kinetic-bg">
+<!-- TopNavBar Suppressed for Error Intent as per Shell Visibility Rule -->
+<main class="flex-grow flex items-center justify-center p-6 relative overflow-hidden">
+<!-- Abstract Background Element -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full"></div>
+<div class="max-w-2xl w-full flex flex-col items-center text-center z-10">
+<!-- Kinetic Error Visual -->
+<div class="relative mb-12">
+<div class="absolute inset-0 bg-tertiary/10 blur-3xl rounded-full scale-150"></div>
+<div class="relative flex flex-col items-center">
+<span class="font-headline font-black text-[8rem] md:text-[12rem] leading-none tracking-tighter text-tertiary opacity-90 monolith-glitch">
+                        403
+                    </span>
+<div class="absolute -bottom-4 right-0 md:-right-8 bg-surface-container-highest px-4 py-2 border-l-4 border-tertiary flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary" data-icon="block">block</span>
+<span class="font-label text-[0.65rem] tracking-[0.2em] uppercase font-bold text-secondary">SİSTEM_KİLİTLENDİ</span>
+</div>
+</div>
+</div>
+<!-- Content Module -->
+<div class="space-y-6">
+<div class="space-y-2">
+<h1 class="font-headline text-3xl md:text-5xl font-extrabold tracking-tight text-white uppercase">
+                        ERİŞİM ENGELLENDİ
+                    </h1>
+<div class="h-1 w-24 bg-tertiary mx-auto opacity-50"></div>
+</div>
+<p class="text-secondary text-lg md:text-xl max-w-lg mx-auto font-light leading-relaxed">
+                    localStorage erişim hatası! Lütfen tarayıcı ayarlarınızı kontrol edin.
+                </p>
+<!-- Technical Details Bento-ish Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12 text-left">
+<div class="bg-surface-container-low p-5 rounded-lg border-l-2 border-outline-variant/15">
+<span class="font-label text-[0.7rem] text-secondary tracking-widest uppercase block mb-3">HATA KODU</span>
+<code class="font-mono text-primary text-sm tracking-wider">ERR_LOCALSTORAGE_DENIED</code>
+</div>
+<div class="bg-surface-container-low p-5 rounded-lg border-l-2 border-outline-variant/15">
+<span class="font-label text-[0.7rem] text-secondary tracking-widest uppercase block mb-3">SİSTEM DURUMU</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-sm font-medium uppercase tracking-tighter">Kritik Kesinti</span>
+</div>
+</div>
+</div>
+<!-- Action Shell -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+<!-- Primary Action: Refresh -->
+<button class="group relative w-full sm:w-auto px-10 py-4 bg-primary text-on-primary font-label font-bold text-sm tracking-[0.15em] rounded-lg overflow-hidden transition-all duration-300 active:scale-95 shadow-[0px_20px_40px_rgba(0,0,0,0.4)]">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-primary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="relative flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="refresh">refresh</span>
+                            SAYFAYI YENİLE
+                        </span>
+</button>
+<!-- Secondary Action: Help -->
+<button class="w-full sm:w-auto px-10 py-4 bg-surface-container-highest text-secondary hover:text-white font-label font-bold text-sm tracking-[0.15em] rounded-lg transition-all duration-300 active:scale-95 border border-outline-variant/10">
+<span class="flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="help_center">help_center</span>
+                            YARDIM AL
+                        </span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Meta Info -->
+<footer class="p-8 border-t border-outline-variant/5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 opacity-40">
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-lg tracking-[0.2em] text-primary">SAYAÇ</span>
+<span class="text-[0.6rem] font-label tracking-widest uppercase">Kinetic Precision v5.0</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="text-[0.6rem] font-label tracking-widest uppercase">GÜVENLİK PROTOKOLÜ: AKTİF</span>
+<span class="text-[0.6rem] font-label tracking-widest uppercase">OTURUM_ID: #403-X-SAYAÇ</span>
+</div>
+</div>
+</footer>
+<!-- Decorative Corner Labels -->
+<div class="fixed top-8 left-8 hidden lg:block pointer-events-none">
+<span class="font-label text-[0.65rem] tracking-[0.4em] text-secondary uppercase origin-left rotate-90 inline-block translate-y-12">SİSTEM ANALİZİ</span>
+</div>
+<div class="fixed bottom-8 right-8 hidden lg:block pointer-events-none">
+<span class="font-label text-[0.65rem] tracking-[0.4em] text-tertiary uppercase text-right">HATA_YAKALANDI_500ms</span>
+</div>
+</body></html>
