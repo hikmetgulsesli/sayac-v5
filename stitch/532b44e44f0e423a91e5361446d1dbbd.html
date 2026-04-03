@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "surface": "#0c1324",
+                    "secondary-fixed": "#b2f2b7",
+                    "on-surface": "#dce1fb",
+                    "error-container": "#93000a",
+                    "outline": "#869585",
+                    "secondary-fixed-dim": "#96d59d",
+                    "surface-container-high": "#23293c",
+                    "surface-variant": "#2e3447",
+                    "primary": "#4be277",
+                    "on-tertiary-fixed": "#410001",
+                    "on-surface-variant": "#bccbb9",
+                    "secondary": "#96d59d",
+                    "on-secondary-container": "#89c78f",
+                    "primary-fixed": "#6bff8f",
+                    "surface-dim": "#0c1324",
+                    "inverse-primary": "#006e2f",
+                    "on-primary-fixed-variant": "#005321",
+                    "on-secondary": "#003915",
+                    "tertiary-container": "#ff8b7c",
+                    "surface-tint": "#4ae176",
+                    "primary-fixed-dim": "#4ae176",
+                    "surface-container-lowest": "#070d1f",
+                    "on-tertiary-container": "#76231b",
+                    "surface-bright": "#33394c",
+                    "inverse-on-surface": "#2a3043",
+                    "on-secondary-fixed-variant": "#145126",
+                    "on-background": "#dce1fb",
+                    "outline-variant": "#3d4a3d",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#7f2a21",
+                    "secondary-container": "#175428",
+                    "surface-container": "#191f31",
+                    "on-primary-fixed": "#002109",
+                    "on-primary": "#003915",
+                    "on-tertiary": "#60130d",
+                    "inverse-surface": "#dce1fb",
+                    "error": "#ffb4ab",
+                    "background": "#0c1324",
+                    "tertiary-fixed": "#ffdad5",
+                    "surface-container-highest": "#2e3447",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "tertiary": "#ffb5ab",
+                    "on-secondary-fixed": "#002109",
+                    "primary-container": "#22c55e",
+                    "on-primary-container": "#004b1e",
+                    "surface-container-low": "#151b2d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #4be277 0%, #22c55e 100%);
+        }
+        .inset-shadow-tech {
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0c1324]">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tracking-tighter text-[#4be277] font-['Space_Grotesk']">SAYAÇ</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#2e3447] transition-colors rounded-xl scale-95 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#2e3447] transition-colors rounded-xl scale-95 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Hidden on mobile, visible md+) -->
+<aside class="fixed left-0 top-0 h-full z-40 hidden md:flex flex-col pt-20 pb-8 px-4 h-screen w-64 bg-[#0c1324]/60 backdrop-blur-xl shadow-[20px_0_40px_rgba(0,0,0,0.4)] border-r border-[#3d4a3d]/15">
+<div class="mb-10 px-4">
+<h2 class="font-['Space_Grotesk'] font-bold text-[#4be277] text-xl">SAYAÇ</h2>
+<p class="font-['Inter'] text-xs uppercase tracking-[0.1em] text-slate-500 mt-1">Precision Counter</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<!-- Active Tab: Ana Sayfa -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#4be277] font-bold border-r-2 border-[#4be277] bg-[#191f31] transition-all duration-200 ease-in-out font-['Inter'] text-xs uppercase tracking-[0.1em]" href="#">
+<span class="material-symbols-outlined" data-icon="home_precision">precision_manufacturing</span>
+<span>Ana Sayfa</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 font-medium hover:text-[#4be277] hover:bg-[#191f31] transition-all duration-200 ease-in-out font-['Inter'] text-xs uppercase tracking-[0.1em]" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Geçmiş</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 font-medium hover:text-[#4be277] hover:bg-[#191f31] transition-all duration-200 ease-in-out font-['Inter'] text-xs uppercase tracking-[0.1em]" href="#">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+<span>Hedefler</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 font-medium hover:text-[#4be277] hover:bg-[#191f31] transition-all duration-200 ease-in-out font-['Inter'] text-xs uppercase tracking-[0.1em]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Ayarlar</span>
+</a>
+</nav>
+<div class="mt-auto px-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male in his 30s, neutral background, studio lighting, high contrast aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfpfH0vK8Da59zAU4jtb3igAmCdWEOb3EhC0rVWOF1oZy95Cl9zp_mX-bzxh3Mk_9qBzqiHHwndRxctgX0FF1rHhKF6LbH5KTQYpjk7G6vOlwLjrDaF1dPRBdVxabiLIfCQkyEWuhzJ1Ouc9cqUVvDM27vvveLOkNW1f_mjbZnUZTTcUwQz5h3iPcve3AYeneEBnACnstl8rP2nTC3xa5QMORs8CaJrqHkwmjI46vvHemRV66AqtcdVlhgGCYeztqefChB6-7OiDw"/>
+</div>
+<div>
+<p class="text-sm font-semibold">User Profile</p>
+<div class="flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_#4be277]"></div>
+<span class="text-[10px] text-slate-400">AKTİF</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-20 pb-12 px-6 min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Ambient Glow Background Decoration -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<!-- Central Counter Block -->
+<section class="w-full max-w-xl flex flex-col items-center relative z-10">
+<!-- Status Indicator Chip -->
+<div class="mb-8 flex items-center gap-2 px-4 py-1.5 bg-surface-container-highest rounded-xl">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="trending_up">trending_up</span>
+<span class="text-[0.6875rem] font-medium tracking-[0.1em] text-primary">+12% BUGÜN</span>
+</div>
+<!-- Monolithic Counter Display -->
+<div class="relative mb-12">
+<h1 class="text-[10rem] md:text-[14rem] font-headline font-bold leading-none tracking-tighter text-on-surface flex items-center justify-center">
+<span class="opacity-10 absolute -left-12 select-none">0</span>
+                    42
+                </h1>
+<div class="absolute -top-4 -right-4 flex flex-col items-end">
+<span class="text-[0.6875rem] font-label font-bold tracking-[0.2em] text-slate-500 uppercase">Toplam Birim</span>
+<div class="w-12 h-0.5 bg-primary mt-1"></div>
+</div>
+</div>
+<!-- Kinetic Action Controls -->
+<div class="flex items-center gap-8 w-full justify-center">
+<!-- Decrement -->
+<button class="w-20 h-20 rounded-xl bg-surface-container-high hover:bg-surface-container-highest flex items-center justify-center transition-all duration-200 active:scale-95 group">
+<span class="text-2xl font-headline font-bold text-slate-400 group-hover:text-on-surface">-1</span>
+</button>
+<!-- Main Increment Button -->
+<button class="w-32 h-32 rounded-xl kinetic-gradient flex flex-col items-center justify-center shadow-[0_20px_40px_rgba(75,226,119,0.2)] hover:shadow-[0_25px_50px_rgba(75,226,119,0.3)] transition-all duration-300 active:scale-95 group">
+<span class="text-4xl font-headline font-extrabold text-on-primary group-hover:scale-110 transition-transform">+1</span>
+<span class="text-[10px] font-label font-bold tracking-widest text-on-primary/70 mt-2">ARTTIR</span>
+</button>
+<!-- Reset Link -->
+<div class="w-20 flex justify-center">
+<button class="text-[0.6875rem] font-label font-bold tracking-[0.2em] text-slate-500 hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">
+                        SIFIRLA
+                    </button>
+</div>
+</div>
+</section>
+<!-- Secondary Metrics Grid -->
+<section class="w-full max-w-4xl mt-24 grid grid-cols-2 md:grid-cols-4 gap-px bg-outline-variant/10 rounded-2xl overflow-hidden border border-outline-variant/15">
+<!-- Ortalama -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-1 transition-colors hover:bg-surface-container">
+<span class="text-[0.6875rem] font-label text-slate-500 tracking-[0.1em] uppercase">Ortalama</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-headline font-semibold text-on-surface">5.2</span>
+<span class="text-xs text-slate-500 font-medium">/sa</span>
+</div>
+</div>
+<!-- Zirve -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-1 transition-colors hover:bg-surface-container">
+<span class="text-[0.6875rem] font-label text-slate-500 tracking-[0.1em] uppercase">Zirve</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-headline font-semibold text-on-surface">18</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span>
+</div>
+</div>
+<!-- Seans -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-1 transition-colors hover:bg-surface-container">
+<span class="text-[0.6875rem] font-label text-slate-500 tracking-[0.1em] uppercase">Seans</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-headline font-semibold text-on-surface">02:45</span>
+</div>
+</div>
+<!-- Hata -->
+<div class="bg-surface-container-low p-6 flex flex-col gap-1 transition-colors hover:bg-surface-container">
+<span class="text-[0.6875rem] font-label text-slate-500 tracking-[0.1em] uppercase text-error">Hata</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-headline font-semibold text-on-surface">0</span>
+<div class="w-2 h-2 rounded-full bg-slate-700 ml-2"></div>
+</div>
+</div>
+</section>
+<!-- Dynamic Visualization (Bento Style) -->
+<section class="w-full max-w-4xl mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-high rounded-2xl p-6 h-48 relative overflow-hidden flex items-end">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/30 via-transparent to-transparent"></div>
+<div class="w-full flex items-end gap-1 h-24">
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 40%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 60%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 35%"></div>
+<div class="flex-1 bg-primary/80 rounded-t-lg shadow-[0_0_15px_#4be277]" style="height: 85%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 55%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 45%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 30%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 50%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 65%"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg" style="height: 40%"></div>
+</div>
+<div class="absolute top-6 left-6">
+<h3 class="text-xs font-label font-bold tracking-widest text-slate-400 uppercase">Aktivite Akışı</h3>
+<p class="text-[10px] text-slate-500 mt-1">Son 60 Dakika</p>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+<div class="z-10">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="verified">verified</span>
+<h3 class="text-sm font-semibold">Hedef Durumu</h3>
+<p class="text-xs text-slate-400 mt-2 leading-relaxed">Günlük hedef olan 100 birime %42 yaklaştınız.</p>
+</div>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden mt-4 z-10">
+<div class="h-full bg-primary" style="width: 42%"></div>
+</div>
+<!-- Abstract Texture -->
+<div class="absolute -bottom-10 -right-10 w-32 h-32 border-[12px] border-primary/5 rounded-full"></div>
+</div>
+</section>
+</main>
+<!-- Mobile Navigation (Visible only on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0c1324] h-16 flex items-center justify-around z-50 border-t border-outline-variant/10">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="home_precision" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="text-[10px] font-medium">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[10px] font-medium">Geçmiş</span>
+</a>
+<div class="relative -top-6">
+<button class="w-14 h-14 rounded-full kinetic-gradient shadow-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+<span class="text-[10px] font-medium">Hedefler</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-medium">Ayarlar</span>
+</a>
+</nav>
+</body></html>

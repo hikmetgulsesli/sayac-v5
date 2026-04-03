@@ -1,0 +1,120 @@
+# sayac-v5 — Ürün Gereksinim Dokümanı
+
+## 1. Genel Bakış
+- **Proje Adı:** sayac-v5
+- **Platform:** Web (SPA)
+- **Tipoloji:** Minimal utility uygulaması
+- **Özet:** Tek sayfalık basit bir sayaç uygulaması. Artır, azalt ve sıfırla aksiyonları ile sayı değerini yönetir. Değer tarayıcıda localStorage ile kalıcı olarak saklanır.
+- **Hedef Kullanıcı:** Günlük kullanım için basit sayaç ihtiyacı olan herkes.
+
+## 2. Hedef Platform
+- **Platform:** Web (mobil uyumlu responsive tasarım)
+- **Tarayıcı Desteği:** Chrome, Firefox, Safari, Edge (son 2 versiyon)
+- **Hedef Cihaz:** Masaüstü ve mobil (telefon, tablet)
+
+## 3. Fonksiyonel Gereksinimler
+
+### 3.1 Temel Özellikler
+| # | Özellik | Açıklama |
+|---|---------|----------|
+| 1 | Sayaç Değeri Gösterimi | Sayı değeri büyük font ile ekran ortasında görüntülenir |
+| 2 | Artır Butonu | Sayaç değerini +1 artırır |
+| 3 | Azalt Butonu | Sayaç değerini -1 azaltır |
+| 4 | Sıfırla Butonu | Sayaç değerini 0'a getirir |
+| 5 | Kalıcı Depolama | Sayaç değeri localStorage'da saklanır, sayfa yenilense bile korunur |
+| 6 | Başlangıç Değeri | İlk açılışta localStorage'dan değer yüklenir; yoksa 0 olarak başlar |
+
+### 3.2 Kullanıcı Etkileşimleri
+- **Artır:** "+1" butonuna tıklama veya klavye ArrowUp / + tuşu
+- **Azalt:** "-1" butonuna tıklama veya klavye ArrowDown / - tuşu
+- **Sıfırla:** "Sıfırla" butonuna tıklama veya klavye r tuşu
+
+## 4. Teknik Gereksinimler
+| Katman | Teknoloji |
+|--------|-----------|
+| Framework | React 18 + Vite |
+| Styling | Tailwind CSS |
+| State Yönetimi | React useState + useEffect |
+| Kalıcı Depolama | localStorage API |
+| Build Araçları | Vite |
+| Tip Kontrolü | TypeScript |
+| Test | Vitest |
+
+## 5. UI/UX Gereksinimleri
+- **Tema:** Koyu tema (dark mode)
+- **Tasarım Dili:** Modern minimal, sade
+- **Renk Paleti:**
+  - Arka plan: slate-950 (#020617)
+  - Kart/Surface: slate-800 (#1e293b)
+  - Birincil (Artır): green-500 (#22c55e)
+  - Hata (Azalt): red-500 (#ef4444)
+  - Yardımcı (Sıfırla): gray-500 (#6b7280)
+  - Metin: beyaz (#ffffff)
+- **Tipografi:** 
+  - Sayaç değeri: 6xl-8xl bold beyaz
+  - Butonlar: lg medium
+  - Font ailesi: Space Grotesk (başlık), Inter (gövde)
+- **Layout:** 
+  - Sayfa ortasında hizalı (flex center)
+  - Butonlar yatay düzende, mobilde dikey stack
+  - Responsive breakpoint: 640px
+
+## 6. Klavye Kısayolları
+| Tuş | Aksiyon |
+|-----|---------|
+| ArrowUp | Sayaç +1 |
+| + | Sayaç +1 |
+| ArrowDown | Sayaç -1 |
+| - | Sayaç -1 |
+| r | Sıfırla |
+
+## 7. Hata Yönetimi
+- **localStorage Erişim Hatası:** Kullanıcıya Türkçe hata mesajı gösterilir
+- **Kota Aşımı:** localStorage dolu olduğunda uyarı gösterilir
+- **Tarayıcı Desteği:** private/incognito modda localStorage kullanılamazsa bilgi mesajı
+
+## 8. Erişilebilirlik (WCAG 2.1 AA)
+- Tüm butonlar aria-label ile Türkçe etiketlenmiş
+- Renk kontrastı minimum 4.5:1
+- Klavye ile tam navigasyon desteklenir
+- Odak göstergesi (focus ring) mevcut
+
+## 9. Performans Hedefleri
+- İlk yükleme: < 2sn
+- Buton gecikmesi: < 100ms
+- Lighthouse performans skoru: > 90
+
+## 10. Dosya Yapısı
+```
+src/
+  components/
+    CounterDisplay.tsx    # Büyük sayaç değeri gösterimi
+    CounterButtons.tsx    # Arttır/Azalt/Sıfırla butonları
+    ErrorBanner.tsx       # Hata durumu banner
+  hooks/
+    useCounter.ts         # Sayaç state + localStorage mantığı
+  utils/
+    storage.ts            # localStorage yardımcı fonksiyonları
+  App.tsx                  # Ana uygulama bileşeni
+  main.tsx                 # Entry point
+  index.css                # Global stiller + Tailwind
+tokens.css                 # Tasarım tokenları (CSS değişkenleri)
+```
+
+## 11. Ekranlar (Screens)
+| # | Ekran Adı | Tür | Açıklama |
+|---|-----------|-----|----------|
+| 1 | Ana Sayaç | utility-view | Sayacın gösterildiği tek ana ekran. Artır, azalt, sıfırla butonları ile sayaç değeri. |
+| 2 | Boş Durum (0) | empty-state | Başlangıç değeri 0 olarak gösterilir. Sayaç 0'da iken tüm butonlar aktif. |
+| 3 | Hata Durumu (Erişim Engellendi) | error-state | localStorage erişim hatası olduğunda kullanıcıya bilgi mesajı gösterilir. |
+
+Generate a SEPARATE screen design for EVERY page, view, modal, dialog, tab panel, and settings screen described in this PRD. Do NOT skip ANY screen — even if it seems minor.
+
+MANDATORY SCREENS:
+- If the PRD mentions "settings" or "ayarlar" → generate a Settings screen
+- If the PRD mentions tabs or bottom navigation → generate EACH tab view as a separate screen
+- If the PRD mentions modals (statistics, help, share, confirmation) → generate each as a separate screen
+- If the PRD mentions error states, empty states, loading states → generate those too
+- Generate at least as many screens as there are distinct views/pages/modals in the PRD
+
+All visible text must be in Turkish. Use a dark, modern theme.

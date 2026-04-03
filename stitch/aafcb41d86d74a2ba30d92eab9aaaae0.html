@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "surface": "#0c1324",
+                        "secondary-fixed": "#b2f2b7",
+                        "on-surface": "#dce1fb",
+                        "error-container": "#93000a",
+                        "outline": "#869585",
+                        "secondary-fixed-dim": "#96d59d",
+                        "surface-container-high": "#23293c",
+                        "surface-variant": "#2e3447",
+                        "primary": "#4be277",
+                        "on-tertiary-fixed": "#410001",
+                        "on-surface-variant": "#bccbb9",
+                        "secondary": "#96d59d",
+                        "on-secondary-container": "#89c78f",
+                        "primary-fixed": "#6bff8f",
+                        "surface-dim": "#0c1324",
+                        "inverse-primary": "#006e2f",
+                        "on-primary-fixed-variant": "#005321",
+                        "on-secondary": "#003915",
+                        "tertiary-container": "#ff8b7c",
+                        "surface-tint": "#4ae176",
+                        "primary-fixed-dim": "#4ae176",
+                        "surface-container-lowest": "#070d1f",
+                        "on-tertiary-container": "#76231b",
+                        "surface-bright": "#33394c",
+                        "inverse-on-surface": "#2a3043",
+                        "on-secondary-fixed-variant": "#145126",
+                        "on-background": "#dce1fb",
+                        "outline-variant": "#3d4a3d",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "secondary-container": "#175428",
+                        "surface-container": "#191f31",
+                        "on-primary-fixed": "#002109",
+                        "on-primary": "#003915",
+                        "on-tertiary": "#60130d",
+                        "inverse-surface": "#dce1fb",
+                        "error": "#ffb4ab",
+                        "background": "#0c1324",
+                        "tertiary-fixed": "#ffdad5",
+                        "surface-container-highest": "#2e3447",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "tertiary": "#ffb5ab",
+                        "on-secondary-fixed": "#002109",
+                        "primary-container": "#22c55e",
+                        "on-primary-container": "#004b1e",
+                        "surface-container-low": "#151b2d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c1324;
+            color: #dce1fb;
+        }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0c1324]">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tracking-tighter text-[#4be277] font-['Space_Grotesk']">SAYAÇ</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:bg-[#2e3447] transition-colors rounded-xl transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-[#2e3447] transition-colors rounded-xl transition-transform duration-150 active:scale-90">
+<span class="material-symbols-outlined">sensors</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-20 pb-8 px-4 bg-[#0c1324]/60 backdrop-blur-xl h-screen w-64 border-r border-[#3d4a3d]/15 shadow-[20px_0_40px_rgba(0,0,0,0.4)] hidden md:flex">
+<div class="mb-8 px-4">
+<h2 class="font-['Space_Grotesk'] font-bold text-[#4be277] text-xl">SAYAÇ</h2>
+<p class="font-['Inter'] text-xs uppercase tracking-[0.1em] text-slate-500">Precision Counter</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 font-medium font-['Inter'] text-xs uppercase tracking-[0.1em] hover:text-[#4be277] hover:bg-[#191f31] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+                Ana Sayfa
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 font-medium font-['Inter'] text-xs uppercase tracking-[0.1em] hover:text-[#4be277] hover:bg-[#191f31] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">history</span>
+                Geçmiş
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 font-medium font-['Inter'] text-xs uppercase tracking-[0.1em] hover:text-[#4be277] hover:bg-[#191f31] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">target</span>
+                Hedefler
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#4be277] font-bold border-r-2 border-[#4be277] font-['Inter'] text-xs uppercase tracking-[0.1em] bg-[#191f31] transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Ayarlar
+            </a>
+</nav>
+<div class="mt-auto px-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="minimalist 3d avatar of a tech-savvy user with dark clothing and clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpOdznw0dJgWX_OpBuf_-Nqgn2tr6nRWlBsZ0toVD1hdHKPI_BtecRkK0Mv6XCbsY7FOYPszVXZKiBiAaDFocRfd9QuiDVa0YVGB6jVfhOGiJu1PuqBMCdKYh496XwJMsgxMO4l6LBhUROiLaqDDCD1mTXXoLvjgGfYOMkLr8X4G25Pq_OBUhgg4HmkjEsRpHXJ52Vo82uiNkVrBr3m1x3pJvd5N_Wvay73Gi-XmDTGHnJ-f_1fmIRZkZnfRC_nIvDOLW73dl3CoU"/>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Operatör 01</p>
+<p class="text-[10px] text-slate-500 uppercase">Pro Sürüm</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pt-24 pb-12 px-6 md:ml-64 min-h-screen max-w-5xl mx-auto">
+<header class="mb-12">
+<h1 class="text-4xl font-headline font-bold tracking-tighter text-on-surface">Ayarlar</h1>
+<p class="text-on-surface-variant font-body mt-2">Cihaz parametrelerini ve sistem yapılandırmasını yönetin.</p>
+</header>
+<!-- Bento Grid Settings Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- 1. Uygulama Ayarları Card -->
+<section class="md:col-span-8 bg-surface-container rounded-xl p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'wght' 100;">settings_suggest</span>
+</div>
+<h2 class="text-xl font-headline font-bold mb-8 flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(75,226,119,0.6)]"></span>
+                    Uygulama Ayarları
+                </h2>
+<div class="space-y-8">
+<!-- Tema Ayarı -->
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-bold font-headline uppercase tracking-widest text-primary">Görünüm</p>
+<p class="text-on-surface-variant text-sm mt-1">Sistem arayüzü renk paleti seçimi.</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-xl">
+<button class="px-4 py-2 bg-surface-container-highest text-primary rounded-lg text-sm font-bold transition-all">Koyu</button>
+<button class="px-4 py-2 text-on-surface-variant hover:text-on-surface text-sm font-medium transition-all">Açık</button>
+</div>
+</div>
+<!-- Dil Ayarı -->
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-bold font-headline uppercase tracking-widest text-primary">Dil Seçimi</p>
+<p class="text-on-surface-variant text-sm mt-1">Uygulama genelinde kullanılacak dil.</p>
+</div>
+<div class="flex items-center gap-2">
+<select class="bg-surface-container-highest border-none rounded-lg text-sm font-medium px-4 py-2 focus:ring-1 focus:ring-primary text-on-surface min-w-[120px]">
+<option>Türkçe</option>
+<option>English</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Veri Yönetimi Card -->
+<section class="md:col-span-4 bg-surface-container rounded-xl p-8 flex flex-col justify-between border-t-2 border-transparent hover:border-error/20 transition-all">
+<div>
+<h2 class="text-xl font-headline font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">database</span>
+                        Veri Yönetimi
+                    </h2>
+<div class="bg-surface-container-lowest p-4 rounded-xl mb-6">
+<p class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant mb-1">Depolama Birimi</p>
+<div class="flex items-center justify-between">
+<span class="text-sm font-bold">LocalStorage Durumu</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded">AKTİF</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        Tüm yerel veriler tarayıcınızda şifrelenmiş olarak saklanır. Sıfırlama işlemi geri alınamaz.
+                    </p>
+<button class="w-full py-4 bg-error-container/20 hover:bg-error-container/40 text-error font-headline font-bold rounded-xl transition-all active:scale-95 border border-error/10">
+                        TÜM VERİLERİ TEMİZLE
+                    </button>
+</div>
+</section>
+<!-- 3. Klavye Kısayolları Card -->
+<section class="md:col-span-12 bg-surface-container-low rounded-xl p-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div>
+<h2 class="text-xl font-headline font-bold mb-2">Klavye Kısayolları</h2>
+<p class="text-on-surface-variant text-sm">Hızlı operasyon için optimize edilmiş kontrol şeması.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+<!-- Shortcut 1 -->
+<div class="flex flex-col items-center gap-3">
+<div class="flex gap-1">
+<div class="w-10 h-10 bg-surface-container-highest rounded-lg border-b-4 border-surface-dim flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+</div>
+</div>
+<span class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant text-center">Artır (+1)</span>
+</div>
+<!-- Shortcut 2 -->
+<div class="flex flex-col items-center gap-3">
+<div class="flex gap-1">
+<div class="w-10 h-10 bg-surface-container-highest rounded-lg border-b-4 border-surface-dim flex items-center justify-center text-primary shadow-lg">
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</div>
+</div>
+<span class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant text-center">Azalt (-1)</span>
+</div>
+<!-- Shortcut 3 -->
+<div class="flex flex-col items-center gap-3">
+<div class="flex gap-1">
+<div class="w-10 h-10 bg-surface-container-highest rounded-lg border-b-4 border-surface-dim flex items-center justify-center text-primary shadow-lg font-headline font-bold">
+                                    R
+                                </div>
+</div>
+<span class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant text-center">Sıfırla</span>
+</div>
+<!-- Shortcut 4 -->
+<div class="flex flex-col items-center gap-3">
+<div class="flex gap-1">
+<div class="w-12 h-10 bg-surface-container-highest rounded-lg border-b-4 border-surface-dim flex items-center justify-center text-primary shadow-lg text-[10px] font-bold">
+                                    SPACE
+                                </div>
+</div>
+<span class="text-[10px] font-label uppercase tracking-tighter text-on-surface-variant text-center">Kaydet</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Technical Visual -->
+<section class="md:col-span-12 h-32 relative overflow-hidden rounded-xl bg-surface-container">
+<div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(to right, #4be277 1px, transparent 1px), linear-gradient(to bottom, #4be277 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<div class="relative h-full flex items-center justify-center px-12">
+<div class="flex-1 h-[2px] bg-primary/20"></div>
+<div class="mx-6 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] font-label uppercase tracking-[0.3em] text-primary">System Online</span>
+</div>
+<div class="flex-1 h-[2px] bg-primary/20"></div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#191f31] flex justify-around items-center h-16 z-50 border-t border-white/5">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="text-[10px]">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px]">Geçmiş</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">target</span>
+<span class="text-[10px]">Hedefler</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#4be277]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Ayarlar</span>
+</a>
+</nav>
+</body></html>
