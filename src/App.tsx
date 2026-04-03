@@ -1,19 +1,32 @@
-import { useState, useEffect } from 'react'
+import { useCounter } from './hooks/useCounter'
 import './index.css'
 
 function App() {
-  const [count, setCount] = useState<number>(() => {
-    const saved = localStorage.getItem('sayac-deger')
-    return saved !== null ? parseInt(saved, 10) : 0
-  })
+  const { count, increment, decrement, reset, loading, error } = useCounter()
 
-  useEffect(() => {
-    localStorage.setItem('sayac-deger', count.toString())
-  }, [count])
+  if (loading) {
+    return (
+      <div className="container">
+        <div className="metric-card">
+          <span className="trend-indicator">SAYAÇ</span>
+          <div className="display-lg">...</div>
+        </div>
+      </div>
+    )
+  }
 
-  const artir = () => setCount((c) => c + 1)
-  const azalt = () => setCount((c) => c - 1)
-  const sifirla = () => setCount(0)
+  if (error) {
+    return (
+      <div className="container">
+        <div className="error-card">
+          <span className="material-symbols-outlined" style={{ fontSize: '3rem', color: 'var(--error)' }}>encrypted</span>
+          <h1 className="error-title">ERİŞİM ENGELLENDİ</h1>
+          <p className="error-message">{error}</p>
+          <button className="btn btn-primary" onClick={() => window.location.reload()}>Sayfayı Yenile</button>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="container">
@@ -22,9 +35,9 @@ function App() {
         <div className="display-lg">{count}</div>
       </div>
       <div className="button-group">
-        <button className="btn btn-secondary" onClick={azalt}>Azalt</button>
-        <button className="btn btn-primary" onClick={sifirla}>Sıfırla</button>
-        <button className="btn btn-secondary" onClick={artir}>Artır</button>
+        <button className="btn btn-secondary" onClick={decrement}>Azalt</button>
+        <button className="btn btn-primary" onClick={reset}>Sıfırla</button>
+        <button className="btn btn-secondary" onClick={increment}>Arttır</button>
       </div>
     </div>
   )

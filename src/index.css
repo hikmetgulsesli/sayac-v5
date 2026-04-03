@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import '../stitch/design-tokens.css';
 
 :root {
-  --surface-container-lowest: #070d1f;
-  --surface: #0c1324;
-  --surface-container: #191f31;
-  --surface-container-high: #23293c;
-  --surface-container-highest: #2d3550;
-  --surface-bright: rgba(45, 53, 80, 0.6);
-  --primary: #4be277;
-  --primary-container: #22c55e;
-  --on-surface: #e2e8f0;
-  --outline-variant: rgba(226, 232, 240, 0.15);
+  --surface-container-lowest: var(--color-surface-container-lowest);
+  --surface: var(--color-surface);
+  --surface-container: var(--color-surface-container);
+  --surface-container-high: var(--color-surface-container-high);
+  --surface-container-highest: var(--color-surface-container-highest);
+  --surface-bright: var(--color-surface-bright);
+  --primary: var(--color-primary);
+  --primary-container: var(--color-primary-container);
+  --on-surface: var(--color-on-surface);
+  --outline-variant: var(--color-outline-variant);
+  --error: var(--color-error);
+  --on-error: var(--color-on-error);
 }
 
 * {
@@ -128,6 +132,31 @@ body {
 
 .btn-secondary:active {
   background-color: var(--surface-container);
+}
+
+.error-card {
+  background-color: var(--surface-container);
+  border-radius: 0.5rem;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.error-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.error-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--on-surface);
+  opacity: 0.8;
 }
 
 @media (max-width: 480px) {
